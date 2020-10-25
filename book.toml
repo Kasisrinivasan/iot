@@ -6,4 +6,4 @@ multilingual = false
 src = "src"
 
 [output.html]
-git-repository-url = "https://github.com/kasisrinivasan/notebook-template/tree/main/src"
+git-repository-url = "https://github.com/kasisrinivasan/iot/tree/main/src"
