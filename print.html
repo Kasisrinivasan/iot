@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="home.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="cheatsheet.html"><strong aria-hidden="true">2.</strong> Cheat Sheet</a></li><li class="chapter-item expanded "><a href="page2.html"><strong aria-hidden="true">3.</strong> Page2</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="OtherStuff.html"><strong aria-hidden="true">4.</strong> OtherStuff</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="page1.html"><strong aria-hidden="true">4.1.</strong> Page1</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="home.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Architecture</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Command Reference</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="command-reference/iot-services-command.html"><strong aria-hidden="true">3.1.</strong> iot-hub</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> References</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -169,13 +169,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <p>Template Home page</p>
+                        <h2><a class="header" href="#iot-hand-book" id="iot-hand-book">IoT Hand book</a></h2>
+<p>IoT Hand book is a quick reference to all things related to solutioning and development of the IoT solutions specificially on Microsoft eco system (Azure).</p>
 <h5><a class="header" href="#iot-hub---create" id="iot-hub---create">IoT Hub - Create</a></h5>
-<pre><code class="language-bash">az iot hub create --name {iot hub name}  -resource-group {resource group name} --sku S1
-
+<pre><code class="language-bash">az iot hub create --name {iot-hub-name}  -resource-group {resource-group-name} --sku {sku-name}
 </code></pre>
-<h1><a class="header" href="#otherstuff" id="otherstuff">OtherStuff</a></h1>
-<h1><a class="header" href="#page1" id="page1">Page1</a></h1>
+<h5><a class="header" href="#iot-hub---delete" id="iot-hub---delete">IoT Hub - Delete</a></h5>
+<pre><code class="language-bash">az iot hub delete --name {iot-hub-name}  -resource-group {resource-group-name} --sku {sku-name}
+</code></pre>
 
                     </main>
 
