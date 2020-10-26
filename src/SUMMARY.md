@@ -1,8 +1,9 @@
 # Summary
 
 - [Home](./home.md)
-- [Cheat Sheet](./cheatsheet.md)
-- [Page2](./page2.md)
+- [Architecture]()
+- [Command Reference]()
+  - [iot-hub](./command-reference/iot-services-command.md)
 ------------------------------------------------------------------------------------
-- [OtherStuff](./OtherStuff.md)
-  - [Page1](./page1.md)
+- [References]()
+
