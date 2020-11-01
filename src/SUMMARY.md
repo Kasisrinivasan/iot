@@ -6,7 +6,7 @@
   - [Commands](./command-reference/iot-services-command.md)
 - [Tools](tools.md)
 ------------------------------------------------------------------------------------
-- [References]()
+- [References](references.md)
   - [Learning & Certification](./references/learning-certification.md)
 
 
