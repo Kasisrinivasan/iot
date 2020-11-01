@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>iot-hub - IoT</title>
+        <title>Commands - IoT</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../home.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Architecture</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Command Reference</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../command-reference/iot-services-command.html" class="active"><strong aria-hidden="true">3.1.</strong> iot-hub</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> References</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../home.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Architecture</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Command Reference</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../command-reference/iot-services-command.html" class="active"><strong aria-hidden="true">3.1.</strong> Commands</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> References</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -168,10 +168,13 @@
                 <div id="content" class="content">
                     <main>
                         <h5><a class="header" href="#iot-hub---create" id="iot-hub---create">IoT Hub - Create</a></h5>
-<pre><code class="language-bash">az iot hub create --name {iot-hub-name}  -resource-group {resource-group-name} --sku {sku-name}
+<pre><code class="language-bash">az iot hub create --name {iot-hub-name}  -resource-group {resource-group-name} \
+     --sku {sku-name}
 </code></pre>
+<p>For tier and pricing information refer to <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/">documentation</a>.</p>
 <h5><a class="header" href="#iot-hub---delete" id="iot-hub---delete">IoT Hub - Delete</a></h5>
-<pre><code class="language-bash">az iot hub delete --name {iot-hub-name}  -resource-group {resource-group-name} --sku {sku-name}
+<pre><code class="language-bash">az iot hub delete --name {iot-hub-name}  -resource-group {resource-group-name} 
+
 </code></pre>
 
                     </main>
