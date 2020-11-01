@@ -2,11 +2,11 @@
 
 - [Home](./home.md)
 - [Architecture]()
-- Command Reference
+- [Command Reference]()
   - [Commands](./command-reference/iot-services-command.md)
 - [Tools](tools.md)
 ------------------------------------------------------------------------------------
-- References
+- [References]()
   - [Learning & Certification](./references/learning-certification.md)
 
 
