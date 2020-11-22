@@ -1,12 +1,12 @@
 # Summary
 
 - [Home](./home.md)
-- [Architecture]()
+- [Solutions]()
 - [Command Reference]()
   - [Commands](./command-reference/iot-services-command.md)
 - [Tools](tools.md)
 ------------------------------------------------------------------------------------
-- [References](references.md)
+- [References](./references/references.md)
   - [Learning & Certification](./references/learning-certification.md)
 
 

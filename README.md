@@ -2,4 +2,4 @@ The content in this repo is to help the Internet of Things community looking to 
 
 
 **Disclaimer:**
-Some content/references may be from Microsoft documentation and is purely to spread the knowledge/resources for the IoT developement community. Intent is not to violate copyrights or replicate the content available publicly. 
+Some content/references may be from Microsoft documentation and is purely to spread the knowledge and resources for the IoT development community. Intent is not to violate copyrights or replicate the content available publicly. 
