@@ -2,8 +2,7 @@
 
 - [Home](./home.md)
 - [Solutions](./solutions.md)
-- [Command Reference]()
-  - [Commands](./command-reference/iot-services-command.md)
+- [Command Reference](./command-reference/iot-services-command.md)
 - [Tools](./tools.md)
 ------------------------------------------------------------------------------------
 - [References](./references/references.md)
