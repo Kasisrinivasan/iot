@@ -1,5 +1,6 @@
 ### General ###
 * [IoT End to End Solutions](https://info.microsoft.com/US-AzureApp-CATALOG-FY20-04Apr-16-BuildendtoendIoTsolutions-SRDEM14944_CatalogDisplayPage.html)
+* [Iot Hub - Azure Monitoring Reference](https://docs.microsoft.com/en-us/azure/iot-hub/monitor-iot-hub-reference)
 
 ### IoT Edge ###
 * [Deep Dive: Building IoT and Iot Edge Solutions with IoT Central](https://www.youtube.com/watch?v=Aw_vuVZYr0E)
