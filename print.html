@@ -175,13 +175,24 @@
 <p>Today we have tremendous development tooling, cloud and edge computing options to build richer IoT solutions. The handbook provides some solution, tips &amp; tricks, cheat sheets and reference to Microsoft.</p>
 <h1><a class="header" href="#solutions" id="solutions">Solutions</a></h1>
 <h5><a class="header" href="#iot-hub---create" id="iot-hub---create">IoT Hub - Create</a></h5>
-<pre><code class="language-bash">az iot hub create --name {iot-hub-name}  -resource-group {resource-group-name} \
-     --sku {sku-name}
+<pre><code class="language-bash">az iot hub create --name &lt;iothubName&gt; -resource-group &lt;resourceGroupName&gt; \
+     --sku &lt;skuname&gt;
 </code></pre>
 <p>For tier and pricing information refer to <a href="https://azure.microsoft.com/en-us/pricing/details/iot-hub/">documentation</a>.</p>
 <h5><a class="header" href="#iot-hub---delete" id="iot-hub---delete">IoT Hub - Delete</a></h5>
-<pre><code class="language-bash">az iot hub delete --name {iot-hub-name}  -resource-group {resource-group-name} 
+<pre><code class="language-bash">az iot hub delete --name &lt;iothubName&gt;  -resource-group &lt;resourceGroupName&gt;
 
+</code></pre>
+<h5><a class="header" href="#iot-hub---retrieve-current-ip-filters" id="iot-hub---retrieve-current-ip-filters">IoT Hub - Retrieve current IP filters</a></h5>
+<pre><code class="language-bash">az resource show -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs
+</code></pre>
+<h5><a class="header" href="#iot-hub---add-ip-filters" id="iot-hub---add-ip-filters">IoT Hub - Add IP filters</a></h5>
+<pre><code class="language-bash">az resource update -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs \
+     --add properties.ipFilterRules &quot;{\&quot;action\&quot;:\&quot;Reject\&quot;,\&quot;filterName\&quot;:\&quot;MaliciousIP\&quot;,\&quot;ipMask\&quot;:\&quot;6.6.6.6/6\&quot;}&quot;
+</code></pre>
+<h5><a class="header" href="#iot-hub---delete-ip-filters" id="iot-hub---delete-ip-filters">IoT Hub - Delete IP filters</a></h5>
+<pre><code class="language-bash">az resource update -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs \
+      --add properties.ipFilterRules &lt;ipFilterIndexToRemove&gt;
 </code></pre>
 <h3><a class="header" href="#vs-code-extensions" id="vs-code-extensions">VS Code Extensions</a></h3>
 <p>Azure IoT Tools extensions installs all the IoT related extensions such as IoT Hub Toolkit, IoT Edg, IoT Device Workbench, IoT Services</p>
