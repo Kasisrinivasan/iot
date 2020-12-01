@@ -1,4 +1,4 @@
-### IoT Hub - Create/Delete
+### IoT Hub - Create/Delete & Properties display
 
 ##### IoT Hub - Create
 
@@ -16,11 +16,14 @@ az iot hub delete --name <iothubName>  -resource-group <resourceGroupName>
 
 ##### IoT Hub - Properties Display 
 ```bash
-az iot hub show --query properties.eventHubEndpoints.events.endpoint --name <iothubName>
+az iot hub show --query properties.eventHubEndpoints.events.endpoint \
+     --name <iothubName>
 
-az iot hub show --query properties.eventHubEndpoints.events.path --name <iothubName>
+az iot hub show --query properties.eventHubEndpoints.events.path \
+     --name <iothubName>
 
-az iot hub policy show --name service --query primaryKey --hub-name <iothubName>
+az iot hub policy show --name service --query primaryKey \
+     --hub-name <iothubName>
 ```
 
 ##### IoT Hub - Retrieving Iot Hub Connection String 
@@ -35,7 +38,8 @@ az iot hub device-identity show-connection-string \
 ##### IoT Hub - Retrieving Iot Hub Connection String (Backend Apps)
 
 ```bash
-az iot hub show-connection-string --policy-name service --name <iothubName> --output table
+az iot hub show-connection-string --policy-name service \
+     --name <iothubName> --output table
 ```
 
 ### IoT Hub - Device Registration
@@ -50,7 +54,8 @@ az iot hub device-identity create \
 ##### IoT Hub - Displaying a Connection String of the Device
 
 ```bash
-az iot hub device-identity show-connection-string --hub-name <iothubName> --device-id <devicename> --output table
+az iot hub device-identity show-connection-string \
+     --hub-name <iothubName> --device-id <devicename> --output table
 ```
 
 
@@ -69,13 +74,15 @@ az resource show -n <iothubName> -g <resourceGroupName> --resource-type Microsof
 
 ##### IoT Hub - Add IP filters 
 ```bash
-az resource update -n <iothubName> -g <resourceGroupName> --resource-type Microsoft.Devices/IotHubs \
+az resource update -n <iothubName> -g <resourceGroupName> \
+     --resource-type Microsoft.Devices/IotHubs \
      --add properties.ipFilterRules "{\"action\":\"Reject\",\"filterName\":\"MaliciousIP\",\"ipMask\":\"6.6.6.6/6\"}"
 ```
 
 ##### IoT Hub - Delete IP filters 
 ```bash
-az resource update -n <iothubName> -g <resourceGroupName> --resource-type Microsoft.Devices/IotHubs \
+az resource update -n <iothubName> -g <resourceGroupName> \
+     --resource-type Microsoft.Devices/IotHubs \
       --add properties.ipFilterRules <ipFilterIndexToRemove>
 ```
 
