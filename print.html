@@ -174,7 +174,7 @@
 <p>In the recent years, organizations have shifted their focus more on IoT adoption and usage. This shift is due to the technology progress and maturity in terms of the hardware sensors, devices and software, improved connectivity over cellular network, production ready hardware and even the ability to run the IoT solutions at the edge.</p>
 <p>Today we have tremendous development tooling, cloud and edge computing options to build richer IoT solutions. The handbook provides some solution, tips &amp; tricks, cheat sheets and reference to Microsoft.</p>
 <h1><a class="header" href="#solutions" id="solutions">Solutions</a></h1>
-<h3><a class="header" href="#iot-hub---createdelete" id="iot-hub---createdelete">IoT Hub - Create/Delete</a></h3>
+<h3><a class="header" href="#iot-hub---createdelete--properties-display" id="iot-hub---createdelete--properties-display">IoT Hub - Create/Delete &amp; Properties display</a></h3>
 <h5><a class="header" href="#iot-hub---create" id="iot-hub---create">IoT Hub - Create</a></h5>
 <pre><code class="language-bash">az iot hub create --name &lt;iothubName&gt; -resource-group &lt;resourceGroupName&gt; \
      --sku &lt;skuname&gt;
@@ -184,11 +184,14 @@
 <pre><code class="language-bash">az iot hub delete --name &lt;iothubName&gt;  -resource-group &lt;resourceGroupName&gt;
 </code></pre>
 <h5><a class="header" href="#iot-hub---properties-display" id="iot-hub---properties-display">IoT Hub - Properties Display</a></h5>
-<pre><code class="language-bash">az iot hub show --query properties.eventHubEndpoints.events.endpoint --name &lt;iothubName&gt;
+<pre><code class="language-bash">az iot hub show --query properties.eventHubEndpoints.events.endpoint \
+     --name &lt;iothubName&gt;
 
-az iot hub show --query properties.eventHubEndpoints.events.path --name &lt;iothubName&gt;
+az iot hub show --query properties.eventHubEndpoints.events.path \
+     --name &lt;iothubName&gt;
 
-az iot hub policy show --name service --query primaryKey --hub-name &lt;iothubName&gt;
+az iot hub policy show --name service --query primaryKey \
+     --hub-name &lt;iothubName&gt;
 </code></pre>
 <h5><a class="header" href="#iot-hub---retrieving-iot-hub-connection-string" id="iot-hub---retrieving-iot-hub-connection-string">IoT Hub - Retrieving Iot Hub Connection String</a></h5>
 <pre><code class="language-bash">az iot hub device-identity show-connection-string \
@@ -197,7 +200,8 @@ az iot hub policy show --name service --query primaryKey --hub-name &lt;iothubNa
   --output table
 </code></pre>
 <h5><a class="header" href="#iot-hub---retrieving-iot-hub-connection-string-backend-apps" id="iot-hub---retrieving-iot-hub-connection-string-backend-apps">IoT Hub - Retrieving Iot Hub Connection String (Backend Apps)</a></h5>
-<pre><code class="language-bash">az iot hub show-connection-string --policy-name service --name &lt;iothubName&gt; --output table
+<pre><code class="language-bash">az iot hub show-connection-string --policy-name service \
+     --name &lt;iothubName&gt; --output table
 </code></pre>
 <h3><a class="header" href="#iot-hub---device-registration" id="iot-hub---device-registration">IoT Hub - Device Registration</a></h3>
 <h5><a class="header" href="#iot-hub---registering-a-device" id="iot-hub---registering-a-device">IoT Hub - Registering a Device</a></h5>
@@ -205,7 +209,8 @@ az iot hub policy show --name service --query primaryKey --hub-name &lt;iothubNa
   --hub-name &lt;iothubName&gt; --device-id &lt;devicename&gt;
 </code></pre>
 <h5><a class="header" href="#iot-hub---displaying-a-connection-string-of-the-device" id="iot-hub---displaying-a-connection-string-of-the-device">IoT Hub - Displaying a Connection String of the Device</a></h5>
-<pre><code class="language-bash">az iot hub device-identity show-connection-string --hub-name &lt;iothubName&gt; --device-id &lt;devicename&gt; --output table
+<pre><code class="language-bash">az iot hub device-identity show-connection-string \
+     --hub-name &lt;iothubName&gt; --device-id &lt;devicename&gt; --output table
 </code></pre>
 <h3><a class="header" href="#iot-hub---monitor" id="iot-hub---monitor">IoT Hub - Monitor</a></h3>
 <pre><code class="language-bash">az iot hub monitor-events --output table --hub-name &lt;iothubName&gt;
@@ -215,11 +220,13 @@ az iot hub policy show --name service --query primaryKey --hub-name &lt;iothubNa
 <pre><code class="language-bash">az resource show -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs
 </code></pre>
 <h5><a class="header" href="#iot-hub---add-ip-filters" id="iot-hub---add-ip-filters">IoT Hub - Add IP filters</a></h5>
-<pre><code class="language-bash">az resource update -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs \
+<pre><code class="language-bash">az resource update -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; \
+     --resource-type Microsoft.Devices/IotHubs \
      --add properties.ipFilterRules &quot;{\&quot;action\&quot;:\&quot;Reject\&quot;,\&quot;filterName\&quot;:\&quot;MaliciousIP\&quot;,\&quot;ipMask\&quot;:\&quot;6.6.6.6/6\&quot;}&quot;
 </code></pre>
 <h5><a class="header" href="#iot-hub---delete-ip-filters" id="iot-hub---delete-ip-filters">IoT Hub - Delete IP filters</a></h5>
-<pre><code class="language-bash">az resource update -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs \
+<pre><code class="language-bash">az resource update -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; \
+     --resource-type Microsoft.Devices/IotHubs \
       --add properties.ipFilterRules &lt;ipFilterIndexToRemove&gt;
 </code></pre>
 <h3><a class="header" href="#routing" id="routing">Routing</a></h3>
