@@ -167,7 +167,8 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h5><a class="header" href="#iot-hub---create" id="iot-hub---create">IoT Hub - Create</a></h5>
+                        <h3><a class="header" href="#iot-hub---createdelete" id="iot-hub---createdelete">IoT Hub - Create/Delete</a></h3>
+<h5><a class="header" href="#iot-hub---create" id="iot-hub---create">IoT Hub - Create</a></h5>
 <pre><code class="language-bash">az iot hub create --name &lt;iothubName&gt; -resource-group &lt;resourceGroupName&gt; \
      --sku &lt;skuname&gt;
 </code></pre>
@@ -175,12 +176,12 @@
 <h5><a class="header" href="#iot-hub---delete" id="iot-hub---delete">IoT Hub - Delete</a></h5>
 <pre><code class="language-bash">az iot hub delete --name &lt;iothubName&gt;  -resource-group &lt;resourceGroupName&gt;
 </code></pre>
-<h5><a class="header" href="#iot-hub---registering-a-device" id="iot-hub---registering-a-device">IoT Hub - Registering a Device</a></h5>
-<pre><code class="language-bash">az iot hub device-identity create \
-  --hub-name &lt;iothubName&gt; --device-id &lt;devicename&gt;
-</code></pre>
-<h5><a class="header" href="#iot-hub---displaying-a-connection-string-of-the-device" id="iot-hub---displaying-a-connection-string-of-the-device">IoT Hub - Displaying a Connection String of the Device</a></h5>
-<pre><code class="language-bash">az iot hub device-identity show-connection-string --hub-name &lt;iothubName&gt; --device-id &lt;devicename&gt; --output table
+<h5><a class="header" href="#iot-hub---properties-display" id="iot-hub---properties-display">IoT Hub - Properties Display</a></h5>
+<pre><code class="language-bash">az iot hub show --query properties.eventHubEndpoints.events.endpoint --name &lt;iothubName&gt;
+
+az iot hub show --query properties.eventHubEndpoints.events.path --name &lt;iothubName&gt;
+
+az iot hub policy show --name service --query primaryKey --hub-name &lt;iothubName&gt;
 </code></pre>
 <h5><a class="header" href="#iot-hub---retrieving-iot-hub-connection-string" id="iot-hub---retrieving-iot-hub-connection-string">IoT Hub - Retrieving Iot Hub Connection String</a></h5>
 <pre><code class="language-bash">az iot hub device-identity show-connection-string \
@@ -191,6 +192,18 @@
 <h5><a class="header" href="#iot-hub---retrieving-iot-hub-connection-string-backend-apps" id="iot-hub---retrieving-iot-hub-connection-string-backend-apps">IoT Hub - Retrieving Iot Hub Connection String (Backend Apps)</a></h5>
 <pre><code class="language-bash">az iot hub show-connection-string --policy-name service --name &lt;iothubName&gt; --output table
 </code></pre>
+<h3><a class="header" href="#iot-hub---device-registration" id="iot-hub---device-registration">IoT Hub - Device Registration</a></h3>
+<h5><a class="header" href="#iot-hub---registering-a-device" id="iot-hub---registering-a-device">IoT Hub - Registering a Device</a></h5>
+<pre><code class="language-bash">az iot hub device-identity create \
+  --hub-name &lt;iothubName&gt; --device-id &lt;devicename&gt;
+</code></pre>
+<h5><a class="header" href="#iot-hub---displaying-a-connection-string-of-the-device" id="iot-hub---displaying-a-connection-string-of-the-device">IoT Hub - Displaying a Connection String of the Device</a></h5>
+<pre><code class="language-bash">az iot hub device-identity show-connection-string --hub-name &lt;iothubName&gt; --device-id &lt;devicename&gt; --output table
+</code></pre>
+<h3><a class="header" href="#iot-hub---monitor" id="iot-hub---monitor">IoT Hub - Monitor</a></h3>
+<pre><code class="language-bash">az iot hub monitor-events --output table --hub-name &lt;iothubName&gt;
+</code></pre>
+<h3><a class="header" href="#iot-hub---ip-filter-rules" id="iot-hub---ip-filter-rules">IoT Hub - IP Filter Rules</a></h3>
 <h5><a class="header" href="#iot-hub---retrieve-current-ip-filters" id="iot-hub---retrieve-current-ip-filters">IoT Hub - Retrieve current IP filters</a></h5>
 <pre><code class="language-bash">az resource show -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs
 </code></pre>
@@ -202,13 +215,7 @@
 <pre><code class="language-bash">az resource update -n &lt;iothubName&gt; -g &lt;resourceGroupName&gt; --resource-type Microsoft.Devices/IotHubs \
       --add properties.ipFilterRules &lt;ipFilterIndexToRemove&gt;
 </code></pre>
-<h5><a class="header" href="#iot-hub---event-hub-compatible-endponts" id="iot-hub---event-hub-compatible-endponts">IoT Hub - Event Hub Compatible Endponts</a></h5>
-<pre><code class="language-bash">az iot hub show --query properties.eventHubEndpoints.events.endpoint --name &lt;iothubName&gt;
-
-az iot hub show --query properties.eventHubEndpoints.events.path --name &lt;iothubName&gt;
-
-az iot hub policy show --name service --query primaryKey --hub-name &lt;iothubName&gt;
-</code></pre>
+<h3><a class="header" href="#routing" id="routing">Routing</a></h3>
 <h5><a class="header" href="#create-the-route-for-the-storage-endpoint" id="create-the-route-for-the-storage-endpoint">Create the route for the storage endpoint</a></h5>
 <pre><code class="language-bash">az iot hub route create \
   --name $routeName \
@@ -219,6 +226,15 @@ az iot hub policy show --name service --query primaryKey --hub-name &lt;iothubNa
   --enabled \
   --condition $condition
 </code></pre>
+<h3><a class="header" href="#detailed-commands" id="detailed-commands">Detailed Commands</a></h3>
+<ul>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext_azure_iot_az_iot_hub_generate_sas_token">az iot hub generate-sas-token</a></p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext_azure_iot_az_iot_hub_monitor_events">az iot hub monitor-events</a></p>
+</li>
+</ul>
 
                     </main>
 
