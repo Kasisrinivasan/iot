@@ -42,7 +42,7 @@ az iot hub show-connection-string --policy-name service \
      --name <iothubName> --output table
 ```
 
-### IoT Hub - Device Registration
+### IoT Hub - Device Registration/Connect
 
 ##### IoT Hub - Registering a Device
 
