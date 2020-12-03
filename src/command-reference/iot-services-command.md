@@ -28,7 +28,8 @@ az iot hub policy show --name service --query primaryKey \
 
 ##### Display the primary connection string
 ```bash
- az iot hub show-connection-string --name <iothubName> --key primary --query connectionString -o tsv
+ az iot hub show-connection-string --name <iothubName> \
+     --key primary --query connectionString -o tsv
  ```
   
 ##### IoT Hub - Retrieving Iot Hub Connection String (Backend Apps)
