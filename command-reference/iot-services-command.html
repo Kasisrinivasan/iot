@@ -186,11 +186,8 @@ az iot hub show --query properties.eventHubEndpoints.events.path \
 az iot hub policy show --name service --query primaryKey \
      --hub-name &lt;iothubName&gt;
 </code></pre>
-<h5><a class="header" href="#iot-hub---retrieving-iot-hub-connection-string" id="iot-hub---retrieving-iot-hub-connection-string">IoT Hub - Retrieving Iot Hub Connection String</a></h5>
-<pre><code class="language-bash">az iot hub device-identity show-connection-string \
-  --hub-name &lt;iothubName&gt; \
-  --device-id &lt;devicename&gt; \
-  --output table
+<h5><a class="header" href="#display-the-primary-connection-string" id="display-the-primary-connection-string">Display the primary connection string</a></h5>
+<pre><code class="language-bash"> az iot hub show-connection-string --name &lt;iothubName&gt; --key primary --query connectionString -o tsv
 </code></pre>
 <h5><a class="header" href="#iot-hub---retrieving-iot-hub-connection-string-backend-apps" id="iot-hub---retrieving-iot-hub-connection-string-backend-apps">IoT Hub - Retrieving Iot Hub Connection String (Backend Apps)</a></h5>
 <pre><code class="language-bash">az iot hub show-connection-string --policy-name service \
@@ -232,6 +229,12 @@ az iot hub policy show --name service --query primaryKey \
   --endpoint-name $endpointName \
   --enabled \
   --condition $condition
+</code></pre>
+<h2><a class="header" href="#dps" id="dps">DPS</a></h2>
+<h5><a class="header" href="#linking-dps-and-iot-hub" id="linking-dps-and-iot-hub">Linking DPS and IoT Hub</a></h5>
+<pre><code class="language-bash">az iot dps linked-hub create --dps-name &lt;dpsname&gt; \
+     --resource-group &lt;resourceGroupName&gt;  \
+     --connection-string &lt;hubConnectionString&gt; --location &lt;location&gt;
 </code></pre>
 <h3><a class="header" href="#detailed-commands" id="detailed-commands">Detailed Commands</a></h3>
 <ul>
