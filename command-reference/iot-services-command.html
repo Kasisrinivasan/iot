@@ -187,7 +187,8 @@ az iot hub policy show --name service --query primaryKey \
      --hub-name &lt;iothubName&gt;
 </code></pre>
 <h5><a class="header" href="#display-the-primary-connection-string" id="display-the-primary-connection-string">Display the primary connection string</a></h5>
-<pre><code class="language-bash"> az iot hub show-connection-string --name &lt;iothubName&gt; --key primary --query connectionString -o tsv
+<pre><code class="language-bash"> az iot hub show-connection-string --name &lt;iothubName&gt; \
+     --key primary --query connectionString -o tsv
 </code></pre>
 <h5><a class="header" href="#iot-hub---retrieving-iot-hub-connection-string-backend-apps" id="iot-hub---retrieving-iot-hub-connection-string-backend-apps">IoT Hub - Retrieving Iot Hub Connection String (Backend Apps)</a></h5>
 <pre><code class="language-bash">az iot hub show-connection-string --policy-name service \
