@@ -26,15 +26,11 @@ az iot hub policy show --name service --query primaryKey \
      --hub-name <iothubName>
 ```
 
-##### IoT Hub - Retrieving Iot Hub Connection String 
-
+##### Display the primary connection string
 ```bash
-az iot hub device-identity show-connection-string \
-  --hub-name <iothubName> \
-  --device-id <devicename> \
-  --output table
-```
-
+ az iot hub show-connection-string --name <iothubName> --key primary --query connectionString -o tsv
+ ```
+  
 ##### IoT Hub - Retrieving Iot Hub Connection String (Backend Apps)
 
 ```bash
@@ -101,6 +97,16 @@ az iot hub route create \
   --condition $condition
   ```
   
+  ## DPS
+  
+  ##### Linking DPS and IoT Hub 
+```bash
+az iot dps linked-hub create --dps-name <dpsname> \
+     --resource-group <resourceGroupName>  \
+     --connection-string <hubConnectionString> --location <location>
+```
+
+
   ### Detailed Commands
 
 * [az iot hub generate-sas-token](https://docs.microsoft.com/en-us/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext_azure_iot_az_iot_hub_generate_sas_token)
