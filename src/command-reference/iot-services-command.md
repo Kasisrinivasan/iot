@@ -39,6 +39,11 @@ az iot hub show-connection-string --policy-name service \
      --name <iothubName> --output table
 ```
 
+##### Generate Iot Hub SAS Token
+```bash
+az iot hub generate-sas-token --device-id MyTestDevice --hub-name {YourIoTHubName}
+```
+
 ### IoT Hub - Device Registration/Connect
 
 ##### IoT Hub - Registering a Device
