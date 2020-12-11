@@ -8,5 +8,6 @@
 
 ### IoT Edge ###
 * [Deep Dive: Building IoT and Iot Edge Solutions with IoT Central](https://www.youtube.com/watch?v=Aw_vuVZYr0E)
-
 * [Deep Dive: Deploying IoT Edge Workloads on Kubernetes](https://www.youtube.com/watch?v=29j9RDCvIeY)
+* [Using Edge as a gateway Device](https://docs.microsoft.com/en-gb/azure/iot-edge/iot-edge-as-gateway?view=iotedge-2018-06)
+* [How to create transparent Gateway](https://docs.microsoft.com/en-gb/azure/iot-edge/how-to-create-transparent-gateway?view=iotedge-2018-06)
