@@ -5,6 +5,7 @@
 * [IoT Handbook](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide)
 * [IoT Connectivity Troubleshooting](https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-connectivity)
 * [Open Platform Communication Standars](https://opcfoundation.org/resources/whitepapers/)
+* [Generating Certificates](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md)
 
 ### IoT Edge ###
 * [Deep Dive: Building IoT and Iot Edge Solutions with IoT Central](https://www.youtube.com/watch?v=Aw_vuVZYr0E)
